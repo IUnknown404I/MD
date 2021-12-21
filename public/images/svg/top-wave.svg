@@ -1,0 +1,8 @@
+<svg id="visual" viewBox="0 0 960 540" width="960" height="540" xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+    <path d="M0 192L320 153L640 148L960 219L960 0L640 0L320 0L0 0Z" fill="#0af5ca"></path>
+    <path d="M0 158L320 206L640 164L960 148L960 0L640 0L320 0L0 0Z" fill="#28b98d"></path>
+    <path d="M0 98L320 93L640 162L960 137L960 0L640 0L320 0L0 0Z" fill="#258159"></path>
+    <path d="M0 88L320 73L640 59L960 57L960 0L640 0L320 0L0 0Z" fill="#174e2d"></path>
+    <path d="M0 60L320 66L640 74L960 43L960 0L640 0L320 0L0 0Z" fill="#042004"></path>
+</svg>

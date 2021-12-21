@@ -1,0 +1,69 @@
+@import "animations";
+@import "header";
+
+@mixin flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+$glitch-color-1: rgb(255, 0, 0);
+$glitch-color-2: rgb(0, 255, 0);
+$glitch-color-3: rgb(0, 0, 255);
+@include gl-anim($glitch-color-1, $glitch-color-2, $glitch-color-3);
+
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  min-height: 100vh;
+  font-size: 18px;
+  color: #ffffff;
+  background: rgb(31,31,31);
+}
+
+.App {
+  min-height: 100vh;
+  width: 100%;
+  display: table;
+  background: linear-gradient(rgb(8, 24, 3),rgb(0,0,0),rgb(0,0,0));
+  //@include flex;
+  //flex-direction: column;
+
+  .header {
+    position: relative;
+    @include header($glitch-color-1, $glitch-color-2, $glitch-color-3);
+    background-image: url("/public/images/svg/top-wave.svg");
+    background-size: 480px;
+    background-repeat: repeat-x;
+    //background-image: url("/public/images/svg/top-d.svg");
+    //background-size: 800px;
+  }
+
+  .content {
+    padding: 10px 10px;
+    height: 100px;
+  }
+
+  .footer {
+    display: table-row;
+    text-align: center;
+    height: 50px;
+    width: 100%;
+    padding: 5px 0;
+    font-size: 1rem;
+  }
+
+  .sider {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80px;
+    @include flex;
+    flex-direction: column;
+    height: 100vh;
+    border-left: 1px solid mediumseagreen;
+  }
+}
