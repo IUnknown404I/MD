@@ -1,29 +1,33 @@
 $lightgreen: rgb(10,245,202);
-
+@mixin flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .sider {
   position: fixed;
   top: 0;
   right: 0;
+  z-index: 3;
   width: 90px;
   display: flex;
   justify-content: space-between;
   flex-direction: row;
   height: 100vh;
-  //background: hsl(0% 0% 100% / .04);
   background: rgba($lightgreen, .06);
   backdrop-filter: blur(0.3rem);
+  transition: all 1s;
 
   .num-rain {
     position: absolute;
     //top: 101px;
     bottom: -40px;
     left: 0;
-    display: flex;
-    flex-direction: column;
+    @include flex;
+    justify-content: center;
     overflow: hidden;
-    height: 100%;
+    height: 120%;
     width: 20px !important;
-    //animation: rain-move 10s linear infinite;
 
     i {
       line-height: 25px;
@@ -31,17 +35,80 @@ $lightgreen: rgb(10,245,202);
       user-select: none;
       transition: 0.5s;
       text-decoration: none;
+      font-style: normal;
       text-shadow: 0 0 50px $lightgreen;
-
     }
     i:hover {
       color: green;
       text-shadow: 20px 20px 20px 20px $lightgreen;
     }
   }
+  .num-rain i:nth-child(even) {
+    opacity: .5;
+  }
 
   .sider-content {
-    width: 70px !important;
+    @include flex;
+    padding: min(15em, 15vh) 5px 0;
+    margin-left: 20px;
+    width: 60px !important;
+
+    hr {
+      display: block;
+      width: 80%;
+    }
+    > div {
+      @include flex;
+    }
+
+    .sider-themes {
+      margin-top: 3em;
+      padding: 1em 0;
+      gap: .7em;
+      border-radius: 1em;
+
+      span {
+        font-weight: 300;
+        font-size: 1.3rem;
+      }
+    }
+    .sider-icons {
+      padding: 1.5em 0;
+      gap: .75em;
+      border-top: 1px solid white;
+      border-bottom: 1px solid white;
+      background: rgba(mediumseagreen,.02);
+      border-radius: 1em;
+    }
+
+    .sider-icon {
+      border-radius: 50%;
+      cursor: pointer;
+      user-select: none;
+      width: 60%;
+      color: white;
+      border-color: white;
+      font-weight: 100;
+      transition: all 0.5s;
+    }
+    .sider-icon:hover {
+      transform: scale(1.5);
+    }
+
+    .collapse-icon {
+      width: 80% !important;
+      position: relative;
+      margin-bottom: 2em;
+    }
+  }
+}
+
+.collapsed {
+  right: -70px;
+
+  .collapse-icon {
+    margin-right: 170px;
+    margin-top: -50px;
   }
 }
 
@@ -50,6 +117,7 @@ $lightgreen: rgb(10,245,202);
     transform: translateY(0);
   }
   100% {
-    transform: translateY(-200%);
+    //transform: translateY(-390%);
+    transform: translateY(-300%);
   }
 }
