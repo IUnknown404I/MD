@@ -17,10 +17,10 @@ $lightgreen: rgb(10,245,202);
   background: rgba($lightgreen, .06);
   backdrop-filter: blur(0.3rem);
   transition: all 1s;
+  overflow: visible;
 
   .num-rain {
     position: absolute;
-    //top: 101px;
     bottom: -40px;
     left: 0;
     @include flex;
@@ -60,8 +60,15 @@ $lightgreen: rgb(10,245,202);
     > div {
       @include flex;
     }
+    .sider-scroll {
+      @include flex;
+      width: inherit;
+      text-align: center;
+      overflow: auto;
+    }
 
     .sider-themes {
+      @include flex;
       margin-top: 3em;
       padding: 1em 0;
       gap: .7em;
@@ -73,6 +80,7 @@ $lightgreen: rgb(10,245,202);
       }
     }
     .sider-icons {
+      @include flex;
       padding: 1.5em 0;
       gap: .75em;
       border-top: 1px solid white;
@@ -117,7 +125,6 @@ $lightgreen: rgb(10,245,202);
     transform: translateY(0);
   }
   100% {
-    //transform: translateY(-390%);
     transform: translateY(-300%);
   }
 }

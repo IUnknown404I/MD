@@ -242,38 +242,41 @@ const Sider = () => {
                     />
                 }
 
-                <div className='sider-icons'>
-                    {isSnowing
-                        ? <img src='/images/svg/umbrella.svg' className='sider-icon' onClick={snowHandler}/>
-                        : <img src='/images/svg/snow.svg' className='sider-icon' onClick={snowHandler}/>
-                    }
+                <div className='sider-scroll'>
+                    <div className='sider-icons'>
+                        {isSnowing
+                            ? <img src='/images/svg/umbrella.svg' className='sider-icon' onClick={snowHandler}/>
+                            : <img src='/images/svg/snow.svg' className='sider-icon' onClick={snowHandler}/>
+                        }
 
-                    {animate
-                        ? <img src='/images/svg/flash.svg' className='sider-icon'
-                               onClick={() => setAnimate(!animate)}
-                        />
-                        : <img src='/images/svg/flash-off.svg' className='sider-icon'
-                               onClick={() => setAnimate(!animate)}
-                        />
-                    }
-                    {isDarkTheme
-                        ? <img src='/images/svg/sunny.svg' className='sider-icon'
-                               onClick={() => setIsDarkTheme(!isDarkTheme)}
-                        />
-                        : <img src='/images/svg/moon.svg' className='sider-icon'
-                               onClick={() => setIsDarkTheme(!isDarkTheme)}
-                        />
-                    }
+                        {animate
+                            ? <img src='/images/svg/flash.svg' className='sider-icon'
+                                   onClick={() => setAnimate(!animate)}
+                            />
+                            : <img src='/images/svg/flash-off.svg' className='sider-icon'
+                                   onClick={() => setAnimate(!animate)}
+                            />
+                        }
+                        {isDarkTheme
+                            ? <img src='/images/svg/sunny.svg' className='sider-icon'
+                                   onClick={() => setIsDarkTheme(!isDarkTheme)}
+                            />
+                            : <img src='/images/svg/moon.svg' className='sider-icon'
+                                   onClick={() => setIsDarkTheme(!isDarkTheme)}
+                            />
+                        }
+                    </div>
+
+                    <div className='sider-themes'>
+                        <img src='/images/svg/diamond.svg' className='sider-icon'/>
+                        <span>01</span>
+                        <span>02</span>
+                        <span>03</span>
+                        <span>04</span>
+                        <span>05</span>
+                    </div>
                 </div>
 
-                <div className='sider-themes'>
-                    <img src='/images/svg/diamond.svg' className='sider-icon'/>
-                    <span>01</span>
-                    <span>02</span>
-                    <span>03</span>
-                    <span>04</span>
-                    <span>05</span>
-                </div>
             </div>
         </div>
     );
