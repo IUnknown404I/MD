@@ -11,6 +11,7 @@ $translate-text-negative: -.025em, -.0125em;
   justify-content: center;
   align-items: center;
   padding: 10px 10px;
+  user-select: none;
 
   .header-gif {
     position: absolute;

@@ -1,0 +1,55 @@
+$lightgreen: rgb(10,245,202);
+
+.sider {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 90px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  height: 100vh;
+  //background: hsl(0% 0% 100% / .04);
+  background: rgba($lightgreen, .06);
+  backdrop-filter: blur(0.3rem);
+
+  .num-rain {
+    position: absolute;
+    //top: 101px;
+    bottom: -40px;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    height: 100%;
+    width: 20px !important;
+    //animation: rain-move 10s linear infinite;
+
+    i {
+      line-height: 25px;
+      animation: rain-move 10s linear infinite;
+      user-select: none;
+      transition: 0.5s;
+      text-decoration: none;
+      text-shadow: 0 0 50px $lightgreen;
+
+    }
+    i:hover {
+      color: green;
+      text-shadow: 20px 20px 20px 20px $lightgreen;
+    }
+  }
+
+  .sider-content {
+    width: 70px !important;
+  }
+}
+
+@keyframes rain-move {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-200%);
+  }
+}

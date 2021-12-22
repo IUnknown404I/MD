@@ -1,5 +1,6 @@
 @import "animations";
 @import "header";
+@import "sider";
 
 @mixin flex {
   display: flex;
@@ -54,16 +55,5 @@ body {
     width: 100%;
     padding: 5px 0;
     font-size: 1rem;
-  }
-
-  .sider {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 80px;
-    @include flex;
-    flex-direction: column;
-    height: 100vh;
-    border-left: 1px solid mediumseagreen;
   }
 }
