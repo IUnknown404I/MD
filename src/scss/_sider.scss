@@ -1,4 +1,4 @@
-$lightgreen: rgb(10,245,202);
+$lightgreen: rgb(10, 245, 202);
 @mixin flex {
   display: flex;
   flex-direction: column;
@@ -65,6 +65,16 @@ $lightgreen: rgb(10,245,202);
       width: inherit;
       text-align: center;
       overflow: auto;
+      &::-webkit-scrollbar {
+        width: 2px;
+      }
+      &::-webkit-scrollbar-track {
+        background: black;
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: $lightgreen;
+        border-radius: 20px;
+      }
     }
 
     .sider-themes {

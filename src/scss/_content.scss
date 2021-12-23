@@ -1,0 +1,157 @@
+$shadow-color: #0AF5CA;
+
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 7rem 0 5rem;
+  gap: 5em;
+  color: white !important;
+
+  .card {
+    position: relative;
+    width: 500px;
+    max-width: 98%;
+    min-height: 275px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: .5em;
+    font-family: sans-serif;
+    transition: all 0.5s;
+    overflow: hidden;
+    background-position: center;
+    background-size: cover;
+    background-position-y: 15px;
+    box-shadow: 0 0 12px -3px $shadow-color;
+
+    &:before {
+      content: '';
+      margin-bottom: -8.5rem;
+      transition: 0.5s ease-out;
+    }
+
+    .card-title {
+      display: block;
+      width: 100% !important;
+      font-size: 1.5rem;
+      padding: 1em;
+    }
+    .card-content {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: -4.5em;
+      border-top: 2px solid rgba($shadow-color, .4);
+      padding: 1.5rem;
+      font-size: 1.2rem;
+      background: linear-gradient(
+        hsl(0 0% 0% / 1), hsl(0 0% 0% / 0)
+      );
+      transition: 0.7s ease-out;
+      backdrop-filter: blur(5px);
+
+      .card-button {
+        //height: 2rem;
+        overflow: hidden;
+        width: fit-content;
+        position: relative;
+        display: block;
+        font-size: 1rem;
+        padding: .5em .5em;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        font-family: "Baskerville Old Face", serif ;
+        color: $shadow-color;
+        border: 1px solid $shadow-color;
+        border-radius: .2em;
+
+        background: linear-gradient(to bottom, rgba($shadow-color, .1), #371d41) repeat scroll 0 0 / 100% 200% rgba(0, 0, 0, 0);
+        transition: all 0.3s linear 0s;
+        &:hover, &:focus {
+          background-position: 0 -102%;
+          color: white;
+        }
+      }
+    }
+
+    .card-mark {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      height: 30px;
+      padding: 15px 5px 5px;
+      right: 15px;
+      bottom: 0;
+      background: linear-gradient(
+        hsl(0 0% 0% / 1), hsl(0 0% 0% / .3)
+      );
+      border-top-left-radius: .3em;
+      border-top-right-radius: .3em;
+      transition: .7s ease-out;
+      backdrop-filter: blur(2px);
+    }
+
+    &-1{
+      background-image: url('/public/images/jpg/m-1.jpg');
+    }
+    &-2{
+      background-image: url('/public/images/jpg/m-2.jpg');
+    }
+    &-3{
+      background-image: url('/public/images/jpg/m-3.jpg');
+    }
+    &-4{
+      background-image: url('/public/images/png/m-4.png');
+    }
+    &-5{
+      background-image: url('/public/images/jpg/m-5.jpg');
+    }
+    &:hover {
+      background-position-y: 0;
+      &:before {
+        margin-bottom: -7rem;
+      }
+      .card-content {
+        margin-bottom: 0;
+      }
+      .card-mark {
+        transform: scale(.75);
+        bottom: -50px;
+      }
+    }
+  }
+}
+
+.night {
+  &:before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    filter: brightness(10%);
+    background-image: url("/public/images/jpg/b.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+.day {
+  &:before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    filter: brightness(70%);
+    background-image: url("/public/images/jpg/b.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
