@@ -1,7 +1,7 @@
 $translate-text-positive: .0125em, .025em;
 $translate-text-negative: -.025em, -.0125em;
 
-@mixin header($glitch-color-1, $glitch-color-2, $glitch-color-3) {
+@mixin header($glitch-color-1, $glitch-color-2, $glitch-color-3, $glitch-text) {
   position: relative;
   font-size: 5.5rem;
   font-weight: 600;
@@ -29,7 +29,7 @@ $translate-text-negative: -.025em, -.0125em;
     animation: glitch 500ms infinite;
   }
   .glitched-text:before {
-    content: 'ϺØtion ÐesÍgƝ';
+    content: $glitch-text;
     position: absolute;
     left: 0;
     top: 0;
@@ -42,7 +42,7 @@ $translate-text-negative: -.025em, -.0125em;
     opacity: .8;
   }
   .glitched-text:after {
-    content: 'ϺØtion ÐesÍgƝ';
+    content: $glitch-text;
     position: absolute;
     left: 0;
     top: 0;

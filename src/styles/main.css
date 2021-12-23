@@ -358,6 +358,12 @@ body::-webkit-scrollbar-thumb {
 }
 .App .header {
   position: relative;
+  background-image: url("/public/images/svg/top-wave.svg");
+  background-size: 480px;
+  background-repeat: repeat-x;
+  z-index: 2;
+}
+.App .header-main {
   position: relative;
   font-size: 5.5rem;
   font-weight: 600;
@@ -369,23 +375,19 @@ body::-webkit-scrollbar-thumb {
   align-items: center;
   padding: 10px 10px;
   user-select: none;
-  background-image: url("/public/images/svg/top-wave.svg");
-  background-size: 480px;
-  background-repeat: repeat-x;
-  z-index: 2;
 }
-.App .header .header-gif {
+.App .header-main .header-gif {
   position: absolute;
   top: 5px;
   left: 0;
   max-height: 130px;
 }
-.App .header .glitched-text {
+.App .header-main .glitched-text {
   position: relative;
   text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75), -0.025em -0.05em 0 rgba(0, 255, 0, 0.75), 0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
   animation: glitch 500ms infinite;
 }
-.App .header .glitched-text:before {
+.App .header-main .glitched-text:before {
   content: "ϺØtion ÐesÍgƝ";
   position: absolute;
   left: 0;
@@ -396,8 +398,238 @@ body::-webkit-scrollbar-thumb {
   transform: translate(-0.025em, -0.0125em);
   opacity: 0.8;
 }
-.App .header .glitched-text:after {
+.App .header-main .glitched-text:after {
   content: "ϺØtion ÐesÍgƝ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: inherit;
+  animation-duration: 375ms !important;
+  clip-path: polygon(0 80%, 100% 20%, 100% 100%, 0 100%);
+  transform: translate(0.0125em, 0.025em);
+  opacity: 0.8;
+}
+.App .header-1c {
+  position: relative;
+  font-size: 5.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  min-height: 100px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  padding: 10px 10px;
+  user-select: none;
+}
+.App .header-1c .header-gif {
+  position: absolute;
+  top: 5px;
+  left: 0;
+  max-height: 130px;
+}
+.App .header-1c .glitched-text {
+  position: relative;
+  text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75), -0.025em -0.05em 0 rgba(0, 255, 0, 0.75), 0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+  animation: glitch 500ms infinite;
+}
+.App .header-1c .glitched-text:before {
+  content: "1 Раздел";
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: inherit;
+  animation-duration: 650ms !important;
+  clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+  transform: translate(-0.025em, -0.0125em);
+  opacity: 0.8;
+}
+.App .header-1c .glitched-text:after {
+  content: "1 Раздел";
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: inherit;
+  animation-duration: 375ms !important;
+  clip-path: polygon(0 80%, 100% 20%, 100% 100%, 0 100%);
+  transform: translate(0.0125em, 0.025em);
+  opacity: 0.8;
+}
+.App .header-2c {
+  position: relative;
+  font-size: 5.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  min-height: 100px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  padding: 10px 10px;
+  user-select: none;
+}
+.App .header-2c .header-gif {
+  position: absolute;
+  top: 5px;
+  left: 0;
+  max-height: 130px;
+}
+.App .header-2c .glitched-text {
+  position: relative;
+  text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75), -0.025em -0.05em 0 rgba(0, 255, 0, 0.75), 0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+  animation: glitch 500ms infinite;
+}
+.App .header-2c .glitched-text:before {
+  content: "2 Раздел";
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: inherit;
+  animation-duration: 650ms !important;
+  clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+  transform: translate(-0.025em, -0.0125em);
+  opacity: 0.8;
+}
+.App .header-2c .glitched-text:after {
+  content: "2 Раздел";
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: inherit;
+  animation-duration: 375ms !important;
+  clip-path: polygon(0 80%, 100% 20%, 100% 100%, 0 100%);
+  transform: translate(0.0125em, 0.025em);
+  opacity: 0.8;
+}
+.App .header-3c {
+  position: relative;
+  font-size: 5.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  min-height: 100px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  padding: 10px 10px;
+  user-select: none;
+}
+.App .header-3c .header-gif {
+  position: absolute;
+  top: 5px;
+  left: 0;
+  max-height: 130px;
+}
+.App .header-3c .glitched-text {
+  position: relative;
+  text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75), -0.025em -0.05em 0 rgba(0, 255, 0, 0.75), 0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+  animation: glitch 500ms infinite;
+}
+.App .header-3c .glitched-text:before {
+  content: "3 Раздел";
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: inherit;
+  animation-duration: 650ms !important;
+  clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+  transform: translate(-0.025em, -0.0125em);
+  opacity: 0.8;
+}
+.App .header-3c .glitched-text:after {
+  content: "3 Раздел";
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: inherit;
+  animation-duration: 375ms !important;
+  clip-path: polygon(0 80%, 100% 20%, 100% 100%, 0 100%);
+  transform: translate(0.0125em, 0.025em);
+  opacity: 0.8;
+}
+.App .header-4c {
+  position: relative;
+  font-size: 5.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  min-height: 100px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  padding: 10px 10px;
+  user-select: none;
+}
+.App .header-4c .header-gif {
+  position: absolute;
+  top: 5px;
+  left: 0;
+  max-height: 130px;
+}
+.App .header-4c .glitched-text {
+  position: relative;
+  text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75), -0.025em -0.05em 0 rgba(0, 255, 0, 0.75), 0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+  animation: glitch 500ms infinite;
+}
+.App .header-4c .glitched-text:before {
+  content: "4 Раздел";
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: inherit;
+  animation-duration: 650ms !important;
+  clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+  transform: translate(-0.025em, -0.0125em);
+  opacity: 0.8;
+}
+.App .header-4c .glitched-text:after {
+  content: "4 Раздел";
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: inherit;
+  animation-duration: 375ms !important;
+  clip-path: polygon(0 80%, 100% 20%, 100% 100%, 0 100%);
+  transform: translate(0.0125em, 0.025em);
+  opacity: 0.8;
+}
+.App .header-5c {
+  position: relative;
+  font-size: 5.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  min-height: 100px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  padding: 10px 10px;
+  user-select: none;
+}
+.App .header-5c .header-gif {
+  position: absolute;
+  top: 5px;
+  left: 0;
+  max-height: 130px;
+}
+.App .header-5c .glitched-text {
+  position: relative;
+  text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75), -0.025em -0.05em 0 rgba(0, 255, 0, 0.75), 0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+  animation: glitch 500ms infinite;
+}
+.App .header-5c .glitched-text:before {
+  content: "5 Раздел";
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: inherit;
+  animation-duration: 650ms !important;
+  clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+  transform: translate(-0.025em, -0.0125em);
+  opacity: 0.8;
+}
+.App .header-5c .glitched-text:after {
+  content: "5 Раздел";
   position: absolute;
   left: 0;
   top: 0;

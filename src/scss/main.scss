@@ -60,13 +60,28 @@ body {
 
   .header {
     position: relative;
-    @include header($glitch-color-1, $glitch-color-2, $glitch-color-3);
     background-image: url("/public/images/svg/top-wave.svg");
     background-size: 480px;
     background-repeat: repeat-x;
     z-index: 2;
-    //background-image: url("/public/images/svg/top-d.svg");
-    //background-size: 800px;
+  }
+  .header-main {
+    @include header($glitch-color-1, $glitch-color-2, $glitch-color-3, 'ϺØtion ÐesÍgƝ');
+  }
+  .header-1c {
+    @include header($glitch-color-1, $glitch-color-2, $glitch-color-3, '1 Раздел');
+  }
+  .header-2c {
+    @include header($glitch-color-1, $glitch-color-2, $glitch-color-3, '2 Раздел');
+  }
+  .header-3c {
+    @include header($glitch-color-1, $glitch-color-2, $glitch-color-3, '3 Раздел');
+  }
+  .header-4c {
+    @include header($glitch-color-1, $glitch-color-2, $glitch-color-3, '4 Раздел');
+  }
+  .header-5c {
+    @include header($glitch-color-1, $glitch-color-2, $glitch-color-3, '5 Раздел');
   }
 
   .footer {
