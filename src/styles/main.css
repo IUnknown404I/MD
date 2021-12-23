@@ -5,7 +5,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 7rem 0 5rem;
+  margin: 6rem 0 5rem;
   gap: 5em;
   color: white !important;
 }
@@ -25,7 +25,7 @@
   background-position: center;
   background-size: cover;
   background-position-y: 15px;
-  box-shadow: 0 0 12px -3px #0AF5CA;
+  box-shadow: 0 0 12px -3px #0af5ca;
 }
 .content .card:before {
   content: "";
@@ -60,8 +60,8 @@
   text-align: center;
   text-decoration: none;
   font-family: "Baskerville Old Face", serif;
-  color: #0AF5CA;
-  border: 1px solid #0AF5CA;
+  color: #0af5ca;
+  border: 1px solid #0af5ca;
   border-radius: 0.2em;
   background: linear-gradient(to bottom, rgba(10, 245, 202, 0.1), #371d41) repeat scroll 0 0/100% 200% rgba(0, 0, 0, 0);
   transition: all 0.3s linear 0s;
@@ -240,6 +240,32 @@
   gap: 0.7em;
   border-radius: 1em;
 }
+.sider .sider-content .sider-themes a {
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 1.3rem;
+  color: white;
+  border-radius: 50%;
+  padding: 0 0.5em 0.2em;
+  transition: 0.2s;
+}
+.sider .sider-content .sider-themes a:hover {
+  transform: scale(1.1);
+}
+.sider .sider-content .sider-themes a:first-of-type {
+  padding: initial;
+}
+.sider .sider-content .sider-themes a:first-of-type:hover {
+  transform: none;
+}
+.sider .sider-content .sider-themes .active-side-link {
+  font-size: 1.7rem !important;
+  border-bottom: 1px solid #0af5ca;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 139, 0.5);
+}
+.sider .sider-content .sider-themes .active-side-link:hover {
+  transform: none;
+}
 .sider .sider-content .sider-themes span {
   font-weight: 300;
   font-size: 1.3rem;
@@ -290,6 +316,66 @@
     transform: translateY(-300%);
   }
 }
+.chapter-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2 !important;
+  margin: 6rem 0 5rem;
+  padding: 0 4%;
+}
+.chapter-container .player-title {
+  position: relative;
+  color: white !important;
+  text-align: center;
+  margin-bottom: 1.5em;
+  padding-bottom: 0.5em;
+  font-size: 1.5rem;
+  border-bottom: 1px solid rgba(139, 0, 0, 0.5);
+  transition: all 0.4s ease-in-out;
+}
+.chapter-container .player-container {
+  position: relative;
+  width: 90%;
+  max-width: 900px;
+  padding: 2em 1.5em;
+  border: 4px double rgba(139, 0, 0, 0.5);
+  box-shadow: 0 0 25px -10px red;
+  border-radius: 1rem;
+  transition: all 0.4s ease-in-out;
+}
+.chapter-container .player-container:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background-image: url("/public/images/gif/v-b.gif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat-x;
+  filter: brightness(45%);
+}
+.chapter-container .player-container:hover, .chapter-container .player-container:focus {
+  border-color: rgba(10, 245, 202, 0.5);
+  box-shadow: 0 0 25px -10px rgba(10, 245, 202, 0.8);
+}
+.chapter-container .player-container:hover .player-title, .chapter-container .player-container:focus .player-title {
+  border-color: rgba(10, 245, 202, 0.5);
+}
+.chapter-container .player-container .react-player {
+  position: relative;
+  z-index: 100;
+  width: 90%;
+}
+.chapter-container .player-container .react-player video {
+  border-radius: 10px;
+}
+
 @keyframes glitch {
   0% {
     text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75), -0.05em -0.025em 0 rgba(0, 255, 0, 0.75), -0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
@@ -386,6 +472,7 @@ body::-webkit-scrollbar-thumb {
   position: relative;
   text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75), -0.025em -0.05em 0 rgba(0, 255, 0, 0.75), 0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
   animation: glitch 500ms infinite;
+  color: white !important;
 }
 .App .header-main .glitched-text:before {
   content: "ϺØtion ÐesÍgƝ";
@@ -405,7 +492,7 @@ body::-webkit-scrollbar-thumb {
   top: 0;
   animation: inherit;
   animation-duration: 375ms !important;
-  clip-path: polygon(0 80%, 100% 20%, 100% 100%, 0 100%);
+  clip-path: polygon(0 95%, 95% 95%, 95% 45%, 45% 0);
   transform: translate(0.0125em, 0.025em);
   opacity: 0.8;
 }
@@ -432,6 +519,7 @@ body::-webkit-scrollbar-thumb {
   position: relative;
   text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75), -0.025em -0.05em 0 rgba(0, 255, 0, 0.75), 0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
   animation: glitch 500ms infinite;
+  color: white !important;
 }
 .App .header-1c .glitched-text:before {
   content: "1 Раздел";
@@ -451,7 +539,7 @@ body::-webkit-scrollbar-thumb {
   top: 0;
   animation: inherit;
   animation-duration: 375ms !important;
-  clip-path: polygon(0 80%, 100% 20%, 100% 100%, 0 100%);
+  clip-path: polygon(0 95%, 95% 95%, 95% 45%, 45% 0);
   transform: translate(0.0125em, 0.025em);
   opacity: 0.8;
 }
@@ -478,6 +566,7 @@ body::-webkit-scrollbar-thumb {
   position: relative;
   text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75), -0.025em -0.05em 0 rgba(0, 255, 0, 0.75), 0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
   animation: glitch 500ms infinite;
+  color: white !important;
 }
 .App .header-2c .glitched-text:before {
   content: "2 Раздел";
@@ -497,7 +586,7 @@ body::-webkit-scrollbar-thumb {
   top: 0;
   animation: inherit;
   animation-duration: 375ms !important;
-  clip-path: polygon(0 80%, 100% 20%, 100% 100%, 0 100%);
+  clip-path: polygon(0 95%, 95% 95%, 95% 45%, 45% 0);
   transform: translate(0.0125em, 0.025em);
   opacity: 0.8;
 }
@@ -524,6 +613,7 @@ body::-webkit-scrollbar-thumb {
   position: relative;
   text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75), -0.025em -0.05em 0 rgba(0, 255, 0, 0.75), 0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
   animation: glitch 500ms infinite;
+  color: white !important;
 }
 .App .header-3c .glitched-text:before {
   content: "3 Раздел";
@@ -543,7 +633,7 @@ body::-webkit-scrollbar-thumb {
   top: 0;
   animation: inherit;
   animation-duration: 375ms !important;
-  clip-path: polygon(0 80%, 100% 20%, 100% 100%, 0 100%);
+  clip-path: polygon(0 95%, 95% 95%, 95% 45%, 45% 0);
   transform: translate(0.0125em, 0.025em);
   opacity: 0.8;
 }
@@ -570,6 +660,7 @@ body::-webkit-scrollbar-thumb {
   position: relative;
   text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75), -0.025em -0.05em 0 rgba(0, 255, 0, 0.75), 0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
   animation: glitch 500ms infinite;
+  color: white !important;
 }
 .App .header-4c .glitched-text:before {
   content: "4 Раздел";
@@ -589,7 +680,7 @@ body::-webkit-scrollbar-thumb {
   top: 0;
   animation: inherit;
   animation-duration: 375ms !important;
-  clip-path: polygon(0 80%, 100% 20%, 100% 100%, 0 100%);
+  clip-path: polygon(0 95%, 95% 95%, 95% 45%, 45% 0);
   transform: translate(0.0125em, 0.025em);
   opacity: 0.8;
 }
@@ -616,6 +707,7 @@ body::-webkit-scrollbar-thumb {
   position: relative;
   text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75), -0.025em -0.05em 0 rgba(0, 255, 0, 0.75), 0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
   animation: glitch 500ms infinite;
+  color: white !important;
 }
 .App .header-5c .glitched-text:before {
   content: "5 Раздел";
@@ -635,7 +727,7 @@ body::-webkit-scrollbar-thumb {
   top: 0;
   animation: inherit;
   animation-duration: 375ms !important;
-  clip-path: polygon(0 80%, 100% 20%, 100% 100%, 0 100%);
+  clip-path: polygon(0 95%, 95% 95%, 95% 45%, 45% 0);
   transform: translate(0.0125em, 0.025em);
   opacity: 0.8;
 }

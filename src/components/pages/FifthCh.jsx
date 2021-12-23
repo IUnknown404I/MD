@@ -1,10 +1,11 @@
 import React from 'react';
+import Header from "../Header";
 
 const FifthCh = () => {
     return (
-        <div>
-
-        </div>
+        <>
+            <Header pageId='chap5'/>
+        </>
     );
 };
 

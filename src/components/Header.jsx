@@ -26,22 +26,8 @@ const Header = ({pageId}) => {
 
     return (
         <header className={'header ' + className}>
-            {/*<img src='/images/gif/header-gif.gif' className='header-gif'/>*/}
             <div className='glitched-text'>
                 {text}
-                {/*{pageId === 'main'*/}
-                {/*    ? 'ϺØtion ÐesÍgƝ'*/}
-                {/*    : pageId === '1chap'*/}
-                {/*        ? '1 Раздел'*/}
-                {/*        : pageId === '2chap'*/}
-                {/*            ? '2 Раздел'*/}
-                {/*            : pageId === '3chap'*/}
-                {/*                ? '3 Раздел'*/}
-                {/*                : pageId === '4chap'*/}
-                {/*                    ? '4 Раздел'*/}
-                {/*                    : '5 Раздел'*/}
-                {/*}*/}
-                {/*ϺØtion ÐesÍgƝ*/}
             </div>
         </header>
     );

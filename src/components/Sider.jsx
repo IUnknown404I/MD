@@ -1,4 +1,5 @@
 import React, {useEffect, useMemo, useState} from 'react';
+import {NavLink} from "react-router-dom";
 
 const Sider = () => {
     const [isCollapsed, setIsCollapsed] = useState(true);
@@ -20,6 +21,8 @@ const Sider = () => {
 
         return [get, increment];
     }, []);
+
+    const setActiveClass = ({isActive}) => isActive ? 'active-side-link' : '';
 
     function randomInteger(min, max) {
         let rand = min - 0.5 + Math.random() * (max - min + 1);
@@ -175,6 +178,7 @@ const Sider = () => {
 
     useEffect(() => {
         const sider = document.querySelector('.sider');
+
         if (!isCollapsed && sider.classList.contains('collapsed')) {
             sider.classList.toggle('collapsed');
         } else {
@@ -184,6 +188,9 @@ const Sider = () => {
 
     useEffect(() => {
         const glitch = document.querySelector('.glitched-text');
+        if(!glitch){
+            return;
+        }
 
         if(animate) {
             glitch.style.animation = 'glitch 500ms infinite';
@@ -210,13 +217,18 @@ const Sider = () => {
             body.style.background = 'rgb(0,0,0)';
             body.style.color = '#ffffff';
             sider.style.background = 'rgba(10,245,202, .06)';
-            glitch.style.color = '#ffffff';
+            if(glitch){
+                glitch.style.color = '#ffffff';
+            }
 
-            setTimeout(() => {
-                if(content.classList.contains('day'))
-                    content.classList.toggle('day');
-                content.classList.toggle('night');
-            }, 1250);
+            if(content) {
+                setTimeout(() => {
+                    if(content.classList.contains('day'))
+                        content.classList.toggle('day');
+                    if(!content.classList.contains('night'))
+                        content.classList.toggle('night');
+                }, 1250);
+            }
             setTimeout(() => {
                 app.style.background = 'linear-gradient(rgb(8, 24, 3),rgb(0,0,0),rgb(0,0,0),rgb(0,0,0),rgb(0,0,0),rgb(0,0,0),rgb(0,0,0))';
             }, 1350);
@@ -225,12 +237,15 @@ const Sider = () => {
             body.style.color = 'rgb(0,0,0)';
             app.style.background = 'unset';
             sider.style.background = 'rgba(40,185,141, .4)';
-            glitch.style.color = '#ffffff';
+            if(glitch){
+                glitch.style.color = '#ffffff';
+            }
 
             setTimeout(() => {
-                if(content.classList.contains('night'))
+                if(content && content.classList.contains('night'))
                     content.classList.toggle('night');
-                content.classList.toggle('day');
+                if(content)
+                    content.classList.toggle('day');
 
                 app.style.background = 'linear-gradient(rgb(10,245,202),rgb(255,255,255),rgb(255,255,255),rgb(255,255,255),rgb(255,255,255),rgb(255,255,255),rgb(255,255,255))';
             }, 1350);
@@ -280,12 +295,14 @@ const Sider = () => {
                     </div>
 
                     <div className='sider-themes'>
-                        <img src='/images/svg/diamond.svg' className='sider-icon'/>
-                        <span>01</span>
-                        <span>02</span>
-                        <span>03</span>
-                        <span>04</span>
-                        <span>05</span>
+                        <NavLink to='/main' className={setActiveClass}>
+                            <img src='/images/svg/diamond.svg' className='sider-icon'/>
+                        </NavLink>
+                        <NavLink to='/chapter-1' className={setActiveClass}>01</NavLink>
+                        <NavLink to='/chapter-2' className={setActiveClass}>02</NavLink>
+                        <NavLink to='/chapter-3' className={setActiveClass}>03</NavLink>
+                        <NavLink to='/chapter-4' className={setActiveClass}>04</NavLink>
+                        <NavLink to='/chapter-5' className={setActiveClass}>05</NavLink>
                     </div>
                 </div>
 

@@ -1,15 +1,16 @@
 import './styles/main.css'
+import './utils/snowing'
 import React from "react";
 import Footer from "./components/Footer";
 import Sider from "./components/Sider";
-import './utils/snowing'
-import MainPage from "./components/pages/MainPage";
+import Router from "./components/Router/Router";
 
 function App() {
+    //TODO: set the Context for onload is-animation-enabled check
   return (
     <div className="App">
       <Sider/>
-        <MainPage/>
+        <Router/>
       <Footer/>
     </div>
   );

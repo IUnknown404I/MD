@@ -27,6 +27,7 @@ $translate-text-negative: -.025em, -.0125em;
     -0.025em -0.05em 0 rgba($glitch-color-2, 0.75),
     0.025em 0.05em 0 rgba($glitch-color-3, 0.75);
     animation: glitch 500ms infinite;
+    color: white !important;
   }
   .glitched-text:before {
     content: $glitch-text;
@@ -48,8 +49,8 @@ $translate-text-negative: -.025em, -.0125em;
     top: 0;
     animation: inherit;
     animation-duration: 375ms !important;
-    //clip-path: polygon(0 80%, 100% 55%, 100% 100%, 0 100%);
-    clip-path: polygon(0 80%, 100% 20%, 100% 100%, 0 100%);
+    clip-path: polygon(0 95%, 95% 95%, 95% 45%, 45% 0);
+    //clip-path: polygon(0 80%, 100% 20%, 100% 100%, 0 100%);
     transform: translate($translate-text-positive);
     //z-index: -1;
     opacity: .8;

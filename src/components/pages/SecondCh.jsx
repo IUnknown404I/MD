@@ -1,10 +1,12 @@
 import React from 'react';
+import Header from "../Header";
+import Player from "../player/Player";
 
 const SecondCh = () => {
     return (
-        <div>
-
-        </div>
+        <>
+            <Header pageId='chap2'/>
+        </>
     );
 };
 

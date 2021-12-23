@@ -1,7 +1,10 @@
 import React from 'react';
 import Header from "../Header";
+import {useNavigate} from 'react-router-dom';
 
 const MainPage = () => {
+    const navigate = useNavigate();
+
     const getCard = (cardNum, title, desc) => {
         const className = `card card-${cardNum}`;
         return (
@@ -11,7 +14,12 @@ const MainPage = () => {
                 </div>
                 <div className='card-content'>
                     {desc}
-                    <button className='card-button'>Перейти</button>
+                    <button
+                        className='card-button'
+                        onClick={() => {
+                            navigate(`/chapter-${cardNum}`);
+                        }}
+                    >Перейти</button>
                 </div>
                 <div className='card-mark'>0{cardNum}</div>
             </div>
@@ -22,7 +30,7 @@ const MainPage = () => {
         <>
             <Header pageId='main'/>
 
-            <section className='content'>
+            <section className='content night'>
 
                 {getCard(
                     1,

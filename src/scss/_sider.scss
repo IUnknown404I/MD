@@ -1,9 +1,11 @@
 $lightgreen: rgb(10, 245, 202);
+
 @mixin flex {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .sider {
   position: fixed;
   top: 0;
@@ -83,6 +85,35 @@ $lightgreen: rgb(10, 245, 202);
       padding: 1em 0;
       gap: .7em;
       border-radius: 1em;
+
+      a {
+        text-decoration: none;
+        font-weight: 300;
+        font-size: 1.3rem;
+        color: white;
+        border-radius: 50%;
+        padding: 0 .5em .2em;
+        transition: 0.2s;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+      a:first-of-type {
+        padding: initial;
+      }
+      a:first-of-type:hover {
+        transform: none;
+      }
+      .active-side-link {
+        font-size: 1.7rem !important;
+        border-bottom: 1px solid #0af5ca;
+        box-shadow: 0 1px 1px 0 rgba(darkblue, .5);
+
+        &:hover {
+          transform: none;
+        }
+      }
 
       span {
         font-weight: 300;
