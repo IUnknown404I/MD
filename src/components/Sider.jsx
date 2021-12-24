@@ -1,180 +1,37 @@
-import React, {useEffect, useMemo, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {NavLink} from "react-router-dom";
+import toggleColorMode from "../utils/toggleColorMode";
+import Rain from "./rain/Rain";
+import {AppContext} from "./context/Context";
 
 const Sider = () => {
-    const [isCollapsed, setIsCollapsed] = useState(true);
-    const [animate, setAnimate] = useState(true);
-    const [isDarkTheme, setIsDarkTheme] = useState(true);
-    const [isSnowing, setIsSnowing] = useState(true);
-    const [getTimer, incTimer] = useMemo(() => {
-        let clock = 0;
-        const get = () => {
-            return clock;
-        }
-        const increment = () => {
-            if(clock===49) {
-                clock=0;
-                return;
-            }
-            clock++;
-        }
+    const getLocalSnowing = () => {
+        return localStorage.getItem('isSnowing') === 'true';
+    }
+    const getLocalTheme = () => {
+        return localStorage.getItem('isDarkTheme') === 'true';
+    }
 
-        return [get, increment];
-    }, []);
+    const [isCollapsed, setIsCollapsed] = useState(true);
+    const [isDarkTheme, setIsDarkTheme] = useState(getLocalTheme());
+    const [isSnowing, setIsSnowing] = useState(getLocalSnowing());
+    const {
+        isAnimationEnabled,
+        setIsAnimationEnabled,
+    } = useContext(AppContext);
 
     const setActiveClass = ({isActive}) => isActive ? 'active-side-link' : '';
-
-    function randomInteger(min, max) {
-        let rand = min - 0.5 + Math.random() * (max - min + 1);
-        return Math.round(rand);
-    }
-    function getRandomInner(rand) {
-        return rand > 0.2
-            ? rand > 0.4
-            ?  rand > 0.6
-                ? rand > 0.8
-                    ? '♻'
-                    : '⚝'
-                : '⨷'
-            :'⚠'
-            :'♾';
-    }
-    const getI = (isAnimated) => {
-        const currentId = isAnimated
-            ? 'num-'+getTimer()
-            : 'num-off';
-        incTimer();
-
-        if(isAnimated) {
-            setInterval(() => {
-                const rand = Math.random();
-                const element = document.querySelector(`.${currentId}`);
-                if (element)
-                    element.innerHTML = getRandomInner(rand);
-            }, randomInteger(1500, 3500))
-        }
-
-        return <i className={currentId}>
-            {getRandomInner(Math.random())}
-        </i>
-    }
-
     const snowHandler = () => {
+        const snowContainer = document.querySelector('.sparticles');
+
         if(isSnowing) {
-            document.querySelector('.sparticles').style.display = 'none';
+            localStorage.setItem('isSnowing', 'true');
+            snowContainer.style.display = 'initial';
         } else {
-            document.querySelector('.sparticles').style.display = 'initial';
+            localStorage.setItem('isSnowing', 'false');
+            snowContainer.style.display = 'none';
         }
-        setIsSnowing(!isSnowing);
     }
-    const getRain = useMemo(() => {
-        return <div className='num-rain'>
-            {getI(true)}
-            {getI(true)}
-            {getI(true)}
-            {getI(true)}
-            {getI(true)}
-            {getI(true)}
-            {getI(true)}
-            {getI(true)}
-            {getI(true)}
-            {getI(true)}
-            {getI(true)}
-            {getI(true)}
-            {getI(true)}
-            {getI(true)}
-            {getI(true)}
-            {getI(true)}
-            {getI(true)}
-            {getI(true)}
-            {getI(true)}
-            {getI(true)}
-            {getI(true)}
-            {getI(true)}
-            {getI(true)}
-            {getI(true)}
-            {getI(true)}
-            {getI(true)}
-            {getI(true)}
-            {getI(true)}
-            {getI(true)}
-            {getI(true)}
-            {getI(true)}
-            {getI(true)}
-            {getI(true)}
-            {getI(true)}
-            {getI(true)}
-            {getI(true)}
-            {getI(true)}
-            {getI(true)}
-            {getI(true)}
-            {getI(true)}
-            {getI(true)}
-            {getI(true)}
-            {getI(true)}
-            {getI(true)}
-            {getI(true)}
-            {getI(true)}
-            {getI(true)}
-            {getI(true)}
-            {getI(true)}
-            {getI(true)}
-        </div>
-    },[])
-    const getRainOff = useMemo(() => {
-        return <div className='num-rain'>
-            {getI()}
-            {getI()}
-            {getI()}
-            {getI()}
-            {getI()}
-            {getI()}
-            {getI()}
-            {getI()}
-            {getI()}
-            {getI()}
-            {getI()}
-            {getI()}
-            {getI()}
-            {getI()}
-            {getI()}
-            {getI()}
-            {getI()}
-            {getI()}
-            {getI()}
-            {getI()}
-            {getI()}
-            {getI()}
-            {getI()}
-            {getI()}
-            {getI()}
-            {getI()}
-            {getI()}
-            {getI()}
-            {getI()}
-            {getI()}
-            {getI()}
-            {getI()}
-            {getI()}
-            {getI()}
-            {getI()}
-            {getI()}
-            {getI()}
-            {getI()}
-            {getI()}
-            {getI()}
-            {getI()}
-            {getI()}
-            {getI()}
-            {getI()}
-            {getI()}
-            {getI()}
-            {getI()}
-            {getI()}
-            {getI()}
-            {getI()}
-        </div>
-    },[])
 
     useEffect(() => {
         const sider = document.querySelector('.sider');
@@ -187,77 +44,31 @@ const Sider = () => {
     }, [isCollapsed]);
 
     useEffect(() => {
-        const glitch = document.querySelector('.glitched-text');
-        if(!glitch){
-            return;
+        if(document.querySelector('.init-snow-load-check')) {
+            snowHandler();
         }
-
-        if(animate) {
-            glitch.style.animation = 'glitch 500ms infinite';
-            document.querySelectorAll('.num-rain i').forEach((el) => {
-                el.style.animation = 'rain-move 10s linear infinite';
-            })
-        } else {
-            glitch.style.animation = 'none';
-            document.querySelectorAll('.num-rain i').forEach((el) => {
-                el.style.animation = 'none';
-            })
-        }
-    }, [animate]);
+    }, [isSnowing]);
 
     useEffect(() => {
-        const body = document.querySelector('body');
-        const app = document.querySelector('.App');
-        const content = document.querySelector('.content');
-        const sider = document.querySelector('.sider');
-        const glitch = document.querySelector('.glitched-text');
-
-        if(isDarkTheme) {
-            app.style.background = 'unset';
-            body.style.background = 'rgb(0,0,0)';
-            body.style.color = '#ffffff';
-            sider.style.background = 'rgba(10,245,202, .06)';
-            if(glitch){
-                glitch.style.color = '#ffffff';
-            }
-
-            if(content) {
-                setTimeout(() => {
-                    if(content.classList.contains('day'))
-                        content.classList.toggle('day');
-                    if(!content.classList.contains('night'))
-                        content.classList.toggle('night');
-                }, 1250);
-            }
-            setTimeout(() => {
-                app.style.background = 'linear-gradient(rgb(8, 24, 3),rgb(0,0,0),rgb(0,0,0),rgb(0,0,0),rgb(0,0,0),rgb(0,0,0),rgb(0,0,0))';
-            }, 1350);
-        } else {
-            body.style.background = '#ffffff';
-            body.style.color = 'rgb(0,0,0)';
-            app.style.background = 'unset';
-            sider.style.background = 'rgba(40,185,141, .4)';
-            if(glitch){
-                glitch.style.color = '#ffffff';
-            }
-
-            setTimeout(() => {
-                if(content && content.classList.contains('night'))
-                    content.classList.toggle('night');
-                if(content)
-                    content.classList.toggle('day');
-
-                app.style.background = 'linear-gradient(rgb(10,245,202),rgb(255,255,255),rgb(255,255,255),rgb(255,255,255),rgb(255,255,255),rgb(255,255,255),rgb(255,255,255))';
-            }, 1350);
-        }
+        toggleColorMode(isDarkTheme);
     }, [isDarkTheme]);
+
+    useEffect(() => {
+        document.addEventListener('readystatechange', () => {
+            if(document.readyState === 'complete') {
+                setTimeout(snowHandler, 50);
+
+                const checkSpan = document.createElement('span');
+                checkSpan.style.opacity = '0';
+                checkSpan.className = 'init-snow-load-check';
+                document.querySelector('.App').append(checkSpan);
+            }
+        });
+    }, []);
 
     return (
         <div className='sider'>
-            {animate
-                ? getRain
-                : getRainOff
-            }
+            <Rain/>
 
             <div className='sider-content'>
                 {!isCollapsed
@@ -272,18 +83,25 @@ const Sider = () => {
                 <div className='sider-scroll'>
                     <div className='sider-icons'>
                         {isSnowing
-                            ? <img src='/images/svg/umbrella.svg' className='sider-icon' onClick={snowHandler}/>
-                            : <img src='/images/svg/snow.svg' className='sider-icon' onClick={snowHandler}/>
+                            ? <img src='/images/svg/umbrella.svg' className='sider-icon' onClick={() => { setIsSnowing(!isSnowing); }}/>
+                            : <img src='/images/svg/snow.svg' className='sider-icon' onClick={() => { setIsSnowing(!isSnowing); }}/>
                         }
 
-                        {animate
+                        {isAnimationEnabled
                             ? <img src='/images/svg/flash.svg' className='sider-icon'
-                                   onClick={() => setAnimate(!animate)}
+                                   onClick={() => {
+                                       localStorage.setItem('isAnimationEnabled', `${isAnimationEnabled}`);
+                                       setIsAnimationEnabled(!isAnimationEnabled);
+                                   }}
                             />
                             : <img src='/images/svg/flash-off.svg' className='sider-icon'
-                                   onClick={() => setAnimate(!animate)}
+                                   onClick={() => {
+                                       localStorage.setItem('isAnimationEnabled', `${isAnimationEnabled}`);
+                                       setIsAnimationEnabled(!isAnimationEnabled);
+                                   }}
                             />
                         }
+
                         {isDarkTheme
                             ? <img src='/images/svg/sunny.svg' className='sider-icon'
                                    onClick={() => setIsDarkTheme(!isDarkTheme)}

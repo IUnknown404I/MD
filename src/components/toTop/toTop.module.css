@@ -1,0 +1,29 @@
+.toTop {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 100px;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    color: black;
+    background: rgba(10,245,202, .25);
+    border-radius: 50%;
+    transition: .5s ease-out;
+    z-index: 100;
+}
+.toTop:hover {
+    background: rgba(10,245,202, .35);
+}
+
+.toTop img {
+    padding: 5px;
+}
+
+.hide {
+    bottom: -40px;
+}
+.show {
+    bottom: 20px;
+}

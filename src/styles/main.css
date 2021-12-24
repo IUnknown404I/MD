@@ -412,8 +412,8 @@ body {
   min-height: 100vh;
   font-size: 18px;
   color: #ffffff;
-  background: #1f1f1f;
-  transition: 1.5s;
+  background: black;
+  transition: 1.2s;
 }
 body::-webkit-scrollbar {
   width: 4px;

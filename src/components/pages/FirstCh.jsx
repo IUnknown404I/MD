@@ -1,8 +1,16 @@
-import React from 'react';
+import React, {useContext, useEffect} from 'react';
 import Player from "../player/Player";
 import Header from "../Header";
+import toggleGlitch from "../../utils/toggleGlitch";
+import {AppContext} from "../context/Context";
 
 const FirstCh = () => {
+    const {isAnimationEnabled} = useContext(AppContext);
+
+    useEffect(() => {
+        toggleGlitch(isAnimationEnabled);
+    }, [isAnimationEnabled]);
+
     return (
         <>
             <Header pageId='chap1'/>

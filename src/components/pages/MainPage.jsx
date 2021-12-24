@@ -1,9 +1,12 @@
-import React from 'react';
+import React, {useContext, useEffect} from 'react';
 import Header from "../Header";
 import {useNavigate} from 'react-router-dom';
+import toggleGlitch from "../../utils/toggleGlitch";
+import {AppContext} from "../context/Context";
 
 const MainPage = () => {
     const navigate = useNavigate();
+    const {isAnimationEnabled} = useContext(AppContext);
 
     const getCard = (cardNum, title, desc) => {
         const className = `card card-${cardNum}`;
@@ -25,6 +28,10 @@ const MainPage = () => {
             </div>
         );
     }
+
+    useEffect(() => {
+        toggleGlitch(isAnimationEnabled);
+    }, [isAnimationEnabled]);
 
     return (
         <>

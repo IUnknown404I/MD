@@ -12,7 +12,7 @@
 /build
 
 # video
-/video
+/public/video
 
 # misc
 .DS_Store
