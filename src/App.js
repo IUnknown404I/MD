@@ -8,17 +8,17 @@ import ToTop from "./components/toTop/ToTop";
 import {ContextProvider} from "./components/context/Context";
 
 function App() {
-  return (
-    <div className="App">
-        <ContextProvider>
-            <Sider/>
-            <Router/>
-        </ContextProvider>
+    return (
+        <div className="App">
+            <ContextProvider>
+                <Sider/>
+                <Router/>
+                <Footer/>
+            </ContextProvider>
 
-        <Footer/>
-        <ToTop/>
-    </div>
-  );
+            <ToTop/>
+        </div>
+    );
 }
 
 export default App;

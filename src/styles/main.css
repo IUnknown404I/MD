@@ -740,5 +740,31 @@ body::-webkit-scrollbar-thumb {
   font-size: 1rem;
   user-select: none;
 }
+.App .footer > div {
+  position: relative;
+}
+.App .footer > div .footer-out-span {
+  position: absolute;
+  left: 20px;
+  top: 0;
+  color: red;
+  font-weight: 700;
+  z-index: 5;
+  cursor: pointer;
+  filter: invert(100);
+  transition: 0.3s all;
+}
+.App .footer > div .footer-out-span:hover {
+  filter: unset;
+}
+
+@keyframes out-anim {
+  0% {
+    text-shadow: 1px 1px 5px darkred;
+  }
+  100% {
+    text-shadow: 1px 1px 50px darkred;
+  }
+}
 
 /*# sourceMappingURL=main.css.map */

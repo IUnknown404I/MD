@@ -93,5 +93,35 @@ body {
     padding: 5px 0;
     font-size: 1rem;
     user-select: none;
+
+    > div {
+      position: relative;
+
+      .footer-out-span {
+        position: absolute;
+        left: 20px;
+        top: 0;
+        color: red;
+        font-weight: 700;
+        z-index: 5;
+        cursor: pointer;
+        filter: invert(100);
+        transition: 0.3s all;
+        //animation: out-anim 1.3s infinite;
+
+        &:hover {
+          filter: unset;
+        }
+      }
+    }
+  }
+}
+
+@keyframes out-anim {
+  0% {
+    text-shadow: 1px 1px 5px darkred;
+  }
+  100% {
+    text-shadow: 1px 1px 50px darkred;
   }
 }

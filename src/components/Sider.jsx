@@ -5,6 +5,7 @@ import Rain from "./rain/Rain";
 import {AppContext} from "./context/Context";
 
 const Sider = () => {
+    const {isAuth} = useContext(AppContext);
     const getLocalSnowing = () => {
         return localStorage.getItem('isSnowing') === 'true';
     }
@@ -66,6 +67,7 @@ const Sider = () => {
         });
     }, []);
 
+    // if(!isAuth) return <></>;
     return (
         <div className='sider'>
             <Rain/>
