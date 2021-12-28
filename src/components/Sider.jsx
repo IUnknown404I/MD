@@ -5,11 +5,13 @@ import Rain from "./rain/Rain";
 import {AppContext} from "./context/Context";
 
 const Sider = () => {
-    const {isAuth} = useContext(AppContext);
     const getLocalSnowing = () => {
+        if(localStorage.getItem('isSnowing') === null) return true;
         return localStorage.getItem('isSnowing') === 'true';
     }
     const getLocalTheme = () => {
+        console.log(localStorage.getItem('isDarkTheme'))
+        if(localStorage.getItem('isDarkTheme') === null) return true;
         return localStorage.getItem('isDarkTheme') === 'true';
     }
 
