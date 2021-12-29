@@ -2,6 +2,10 @@ $translate-text-positive: .0125em, .025em;
 $translate-text-negative: -.025em, -.0125em;
 
 @mixin header($glitch-color-1, $glitch-color-2, $glitch-color-3, $glitch-text) {
+  @media (max-width: 500px) {
+    font-size: 5rem;
+  }
+
   position: relative;
   font-size: 5.5rem;
   font-weight: 600;

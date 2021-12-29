@@ -1,5 +1,18 @@
 $shadow-color: #0af5ca;
 
+@media (max-width: 500px) {
+  .night {
+    &:before {
+      background-image: unset !important;
+    }
+  }
+  .day {
+    &:before {
+      background-image: unset !important;
+    }
+  }
+}
+
 .content {
   position: relative;
   display: flex;
@@ -9,11 +22,12 @@ $shadow-color: #0af5ca;
   margin: 6rem 0 5rem;
   gap: 5em;
   color: white !important;
+  max-width: 100%;
 
   .card {
     position: relative;
     width: 500px;
-    max-width: 98%;
+    max-width: 90%;
     min-height: 275px;
     z-index: 2;
     display: flex;
@@ -21,7 +35,7 @@ $shadow-color: #0af5ca;
     justify-content: space-between;
     border-radius: .5em;
     font-family: sans-serif;
-    transition: all 0.5s;
+    transition: all 2s;
     overflow: hidden;
     background-position: center;
     background-size: cover;

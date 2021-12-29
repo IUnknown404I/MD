@@ -99,10 +99,13 @@ $lightgreen: rgb(10, 245, 202);
           transform: scale(1.1);
         }
       }
-      a:first-of-type {
+      a:last-of-type {
+        margin-top: 1.5rem;
+      }
+      a:first-of-type, a:last-of-type {
         padding: initial;
       }
-      a:first-of-type:hover {
+      a:first-of-type:hover, a:last-of-type:hover {
         transform: none;
       }
       .active-side-link {

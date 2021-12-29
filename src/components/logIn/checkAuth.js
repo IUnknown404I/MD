@@ -1,8 +1,9 @@
 const checkAuth = ({setIsAuth}) => {
     const auth = localStorage.getItem('auth');
     const authTime = localStorage.getItem('authTime');
+    const isKeyValid = localStorage.getItem('key') === process.env.REACT_APP_SEC_KEY;
 
-    if(auth && authTime && ((Date.now() - parseInt(authTime)) <= 1000*60*60*24 * 7)) {
+    if(auth && authTime && isKeyValid && ((Date.now() - parseInt(authTime)) <= 1000*60*60*24 * 7)) {
         localStorage.setItem('authTime', Date.now().toString());
         setIsAuth(true);
     } else {

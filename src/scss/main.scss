@@ -16,6 +16,23 @@ $glitch-color-2: rgb(0, 255, 0);
 $glitch-color-3: rgb(0, 0, 255);
 @include gl-anim($glitch-color-1, $glitch-color-2, $glitch-color-3);
 
+.video-js {
+  background-color: transparent !important;
+
+  .vjs-playing .vjs-tech {
+    pointer-events: auto;
+  }
+  &.video-dimensions {
+    position: relative !important;
+    width: 100% !important;
+    max-height: 40vh !important;
+  }
+  .vjs-big-play-button {
+    top: calc(50% - .95em) !important;
+    left: calc(50% - 1.5em) !important;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -25,6 +42,7 @@ html {
 }
 body {
   min-height: 100vh;
+  max-width: 100vw;
   font-size: 18px;
   color: #ffffff;
   background: rgb(0,0,0);
@@ -124,4 +142,8 @@ body {
   100% {
     text-shadow: 1px 1px 50px darkred;
   }
+}
+
+.inactive-block {
+  opacity: 0;
 }

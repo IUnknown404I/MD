@@ -1,17 +1,14 @@
 import React, {useContext, useEffect, useState} from 'react';
-import {NavLink} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 import toggleColorMode from "../utils/toggleColorMode";
 import Rain from "./rain/Rain";
 import {AppContext} from "./context/Context";
 
 const Sider = () => {
     const getLocalSnowing = () => {
-        if(localStorage.getItem('isSnowing') === null) return true;
         return localStorage.getItem('isSnowing') === 'true';
     }
     const getLocalTheme = () => {
-        console.log(localStorage.getItem('isDarkTheme'))
-        if(localStorage.getItem('isDarkTheme') === null) return true;
         return localStorage.getItem('isDarkTheme') === 'true';
     }
 
@@ -69,7 +66,6 @@ const Sider = () => {
         });
     }, []);
 
-    // if(!isAuth) return <></>;
     return (
         <div className='sider'>
             <Rain/>
@@ -125,6 +121,10 @@ const Sider = () => {
                         <NavLink to='/chapter-3' className={setActiveClass}>03</NavLink>
                         <NavLink to='/chapter-4' className={setActiveClass}>04</NavLink>
                         <NavLink to='/chapter-5' className={setActiveClass}>05</NavLink>
+
+                        <Link to='md.rar' target="_blank" download>
+                            <img src='/images/svg/download.svg' className='sider-icon'/>
+                        </Link>
                     </div>
                 </div>
 

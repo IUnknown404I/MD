@@ -27,3 +27,4 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+/public/video/1-1.m3u8

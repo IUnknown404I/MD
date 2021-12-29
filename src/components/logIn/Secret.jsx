@@ -15,6 +15,7 @@ const Secret = () => {
         e.stopPropagation();
 
         if(key === process.env.REACT_APP_SEC_KEY) {
+            localStorage.setItem('key', key);
             localStorage.setItem('auth', '1')
             localStorage.setItem('authTime', Date.now().toString());
             checkAuth({setIsAuth});
