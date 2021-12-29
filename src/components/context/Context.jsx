@@ -4,6 +4,7 @@ const AppContext = React.createContext();
 
 const ContextProvider = ({children}) => {
     const getLocalAnimation = () => {
+        if(localStorage.getItem('isAnimationEnabled') === null) return 'true';
         return localStorage.getItem('isAnimationEnabled') === 'true';
     }
 

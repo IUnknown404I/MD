@@ -6,9 +6,11 @@ import {AppContext} from "./context/Context";
 
 const Sider = () => {
     const getLocalSnowing = () => {
+        if(localStorage.getItem('isSnowing') === null) return 'true';
         return localStorage.getItem('isSnowing') === 'true';
     }
     const getLocalTheme = () => {
+        if(localStorage.getItem('isDarkTheme') === null) return 'true';
         return localStorage.getItem('isDarkTheme') === 'true';
     }
 
