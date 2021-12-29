@@ -10,6 +10,7 @@ import {ContextProvider} from "./components/context/Context";
 function App() {
     return (
         <div className="App">
+        
             <ContextProvider>
                 <Sider/>
                 <Router/>
